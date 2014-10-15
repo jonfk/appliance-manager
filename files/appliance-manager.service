@@ -1,0 +1,13 @@
+[Unit]
+Description=appliance-manager
+
+[Service]
+TimeoutStartSec=0
+PermissionsStartOnly=true
+ExecStart=/usr/bin/appliance-management-web
+ExecStop=killall appliance-management-web
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
